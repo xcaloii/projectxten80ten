@@ -1,0 +1,160 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1" />
+<title>Contact — Ten80Ten | Book a call or send a message</title>
+<meta name="description" content="Book a free 20-minute Time-Back Audit or send us a message. We'll show you exactly where your time is leaking and what to automate first." />
+<link rel="preconnect" href="https://fonts.googleapis.com" />
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+<link href="https://fonts.googleapis.com/css2?family=Schibsted+Grotesk:wght@400;500;600;700&family=Inter:wght@400;500;600&family=Instrument+Serif:ital@0;1&display=swap" rel="stylesheet" />
+<link rel="stylesheet" href="assets/css/styles.css" />
+<link rel="icon" type="image/png" href="assets/img/ten80ten-mark.png" />
+</head>
+<body>
+
+<header class="site-header">
+  <div class="container nav">
+    <a class="brand" href="index.html" aria-label="Ten80Ten home"><img class="mark" src="assets/img/ten80ten-mark.png" alt="" width="40" height="40" /><span>Ten<b>80</b>Ten</span></a>
+    <nav class="nav-links" aria-label="Primary">
+      <a href="services.html">Services</a>
+      <a href="about.html">About</a>
+      <a href="pricing.html">Pricing</a>
+      <a href="contact.html" class="active" aria-current="page">Contact</a>
+    </nav>
+    <div class="nav-cta">
+      <a class="btn btn--ghost" href="#book">Free Time-Back Audit</a>
+      <a class="btn btn--primary" href="#book">Book a call <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12h14M13 6l6 6-6 6"/></svg></a>
+      <button class="nav-toggle" aria-label="Open menu" aria-expanded="false"><span></span></button>
+    </div>
+  </div>
+  <div class="mobile-menu" aria-label="Mobile">
+    <a href="services.html">Services</a>
+    <a href="about.html">About</a>
+    <a href="pricing.html">Pricing</a>
+    <a href="contact.html" class="active">Contact</a>
+    <a class="btn btn--primary" href="#book">Book a call</a>
+  </div>
+</header>
+
+<main>
+<section class="page-hero">
+  <div class="container">
+    <span class="eyebrow" data-reveal>Contact</span>
+    <h1 data-reveal data-delay="1">Let's find where your <span class="serif">time is leaking.</span></h1>
+    <p class="lead" data-reveal data-delay="2">Book a free 20-minute audit, or send a message and we'll get back within one business day. We'll ask how your day runs, show you where time's leaking, and — if it's a fit — how we'd fix it.</p>
+  </div>
+</section>
+
+<section class="section--tight" id="book">
+  <div class="container">
+    <div class="grid cols-2" style="align-items:start;gap:clamp(28px,4vw,56px)">
+
+      <!-- LEFT: booking -->
+      <div data-reveal>
+        <div class="card" style="padding:0;overflow:hidden">
+          <div style="background:var(--ink);color:#fff;padding:clamp(26px,4vw,38px)">
+            <span class="eyebrow" style="color:var(--accent-2);display:inline-flex;margin-bottom:14px">Recommended</span>
+            <h2 style="color:#fff;font-size:clamp(1.6rem,3vw,2.1rem)">Book your free Time-Back Audit</h2>
+            <p style="color:rgba(255,255,255,.7);margin-top:14px;max-width:42ch">20 minutes. No pitch unless you ask. You'll leave knowing exactly what to automate first.</p>
+            <a class="btn btn--primary btn--lg" style="margin-top:24px" href="https://calendly.com/ten80ten/audit" target="_blank" rel="noopener">Open the calendar <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"><path d="M7 17 17 7M7 7h10v10"/></svg></a>
+          </div>
+          <div style="padding:clamp(24px,3vw,32px);display:grid;gap:16px">
+            <div class="sys-row" style="font-size:1rem"><span class="dot dot--on"></span><b>We map your repetitive work</b></div>
+            <div class="sys-row" style="font-size:1rem"><span class="dot dot--on"></span><b>We show where the hours go</b></div>
+            <div class="sys-row" style="font-size:1rem"><span class="dot dot--on"></span><b>You get a plan — fit or not</b></div>
+          </div>
+        </div>
+
+        <div class="card" style="margin-top:18px">
+          <h3 style="font-size:1.15rem;margin-bottom:14px">Prefer to reach out directly?</h3>
+          <a class="link-arrow" href="mailto:hello@ten80ten.com" style="margin-bottom:10px">hello@ten80ten.com <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12h14M13 6l6 6-6 6"/></svg></a><br>
+          <a class="link-arrow" href="https://www.ten80ten.com" target="_blank" rel="noopener">www.ten80ten.com <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"><path d="M7 17 17 7M7 7h10v10"/></svg></a>
+        </div>
+      </div>
+
+      <!-- RIGHT: form -->
+      <div data-reveal data-delay="1">
+        <div class="card">
+          <h2 style="font-size:clamp(1.5rem,2.6vw,1.9rem)">Send us a message</h2>
+          <p class="muted" style="margin-block:8px 24px">Tell us a little about your business and where the busywork piles up.</p>
+
+          <form class="form" data-validate novalidate>
+            <div class="form-row">
+              <div class="field">
+                <label for="name">Name <span class="req" aria-hidden="true">*</span></label>
+                <input id="name" name="name" type="text" autocomplete="name" required placeholder="Jane Doe" />
+                <span class="error">Please enter your name.</span>
+              </div>
+              <div class="field">
+                <label for="email">Email <span class="req" aria-hidden="true">*</span></label>
+                <input id="email" name="email" type="email" autocomplete="email" required placeholder="jane@company.com" />
+                <span class="error">Please enter a valid email.</span>
+              </div>
+            </div>
+            <div class="form-row">
+              <div class="field">
+                <label for="company">Company</label>
+                <input id="company" name="company" type="text" autocomplete="organization" placeholder="Acme Realty" />
+              </div>
+              <div class="field">
+                <label for="industry">Industry</label>
+                <select id="industry" name="industry">
+                  <option value="">Select…</option>
+                  <option>Real estate</option>
+                  <option>Healthcare clinic</option>
+                  <option>Call center</option>
+                  <option>Service business</option>
+                  <option>Founder / agency</option>
+                  <option>Other</option>
+                </select>
+              </div>
+            </div>
+            <div class="field">
+              <label for="message">Where does the repetitive work pile up? <span class="req" aria-hidden="true">*</span></label>
+              <textarea id="message" name="message" required placeholder="e.g. We're losing hours every week chasing follow-ups and confirming appointments…"></textarea>
+              <span class="help">The more detail, the more useful our audit will be.</span>
+              <span class="error">Please tell us a little about your needs.</span>
+            </div>
+            <button type="submit" class="btn btn--primary btn--lg">Send message
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12h14M13 6l6 6-6 6"/></svg>
+            </button>
+            <p class="form-note">By sending this you agree to be contacted about your enquiry. We never share your details.</p>
+            <div class="form-success">
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round"><path d="M20 6 9 17l-5-5"/></svg>
+              <span>Thanks — your message is on its way. We'll be in touch within one business day.</span>
+            </div>
+          </form>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+</main>
+
+<footer class="site-footer">
+  <div class="container">
+    <div class="footer-grid">
+      <div class="footer-about">
+        <a class="brand" href="index.html" aria-label="Ten80Ten home"><img class="mark" src="assets/img/ten80ten-mark.png" alt="" width="40" height="40" /><span>Ten<b>80</b>Ten</span></a>
+        <p>Systems + Specialists. We install the system that does your repetitive work — and give you a trained specialist to run it.</p>
+        <a class="btn btn--dark" href="#book">Book a call</a>
+      </div>
+      <div><h4>Services</h4><a href="services.html">Automation systems</a><a href="services.html">Trained specialists</a><a href="services.html">Custom software</a><a href="#book">Free Time-Back Audit</a></div>
+      <div><h4>Company</h4><a href="about.html">About</a><a href="about.html">The 10/80/10 framework</a><a href="pricing.html">Pricing</a><a href="contact.html">Contact</a></div>
+      <div><h4>Get started</h4><a href="#book">Book a discovery call</a><a href="contact.html">Send a message</a><a href="mailto:hello@ten80ten.com">hello@ten80ten.com</a></div>
+    </div>
+    <div class="footer-bottom">
+      <span>© <span data-year>2026</span> Ten80Ten. All rights reserved.</span>
+      <div class="socials">
+        <a href="#" aria-label="LinkedIn"><svg viewBox="0 0 24 24" fill="currentColor"><path d="M4.98 3.5A2.5 2.5 0 1 1 0 3.5a2.5 2.5 0 0 1 4.98 0ZM.5 8h4V24h-4V8Zm7.5 0h3.8v2.2h.05c.53-1 1.83-2.2 3.77-2.2 4 0 4.75 2.65 4.75 6.1V24h-4v-7.1c0-1.7 0-3.9-2.37-3.9-2.38 0-2.75 1.85-2.75 3.77V24h-4V8Z"/></svg></a>
+        <a href="#" aria-label="X"><svg viewBox="0 0 24 24" fill="currentColor"><path d="M18.9 2H22l-7.5 8.6L23.3 22h-6.9l-5.4-7-6.2 7H1.7l8-9.2L.9 2h7.1l4.9 6.5L18.9 2Zm-1.2 18h1.9L7.1 4H5.1l12.6 16Z"/></svg></a>
+        <a href="#" aria-label="YouTube"><svg viewBox="0 0 24 24" fill="currentColor"><path d="M23 7.5a3 3 0 0 0-2.1-2.1C19 5 12 5 12 5s-7 0-8.9.4A3 3 0 0 0 1 7.5 31 31 0 0 0 .6 12 31 31 0 0 0 1 16.5a3 3 0 0 0 2.1 2.1C5 19 12 19 12 19s7 0 8.9-.4a3 3 0 0 0 2.1-2.1 31 31 0 0 0 .4-4.5 31 31 0 0 0-.4-4.5ZM9.8 15.3V8.7l5.7 3.3-5.7 3.3Z"/></svg></a>
+      </div>
+    </div>
+  </div>
+</footer>
+
+<script src="assets/js/main.js" defer></script>
+</body>
+</html>
