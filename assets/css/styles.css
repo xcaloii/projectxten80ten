@@ -648,6 +648,51 @@ h3 { font-size: clamp(1.25rem, 2.2vw, 1.6rem); letter-spacing: -.015em; line-hei
 .o-dispatch input:focus { outline: none; border-color: var(--accent); box-shadow: 0 0 0 4px var(--accent-soft); }
 .o-dispatch .btn { white-space: nowrap; }
 
+/* ============================================================
+   COLLABORA-STYLE FEATURES LAYOUT (light + orange)
+   ============================================================ */
+.c-hero { text-align: center; padding-top: clamp(20px, 4vw, 48px); }
+.c-hero .ic { width: 74px; height: 74px; border-radius: 20px; margin: 0 auto 24px; background: var(--accent-soft); color: var(--accent-ink); display: grid; place-items: center; box-shadow: var(--sh-2); }
+.c-hero .ic svg { width: 36px; height: 36px; }
+.c-hero h1 { max-width: 17ch; margin-inline: auto; }
+.c-hero .lead { margin-inline: auto; margin-top: 22px; }
+.c-hero .hero-actions { justify-content: center; }
+.c-herovis { position: relative; margin-top: clamp(44px, 6vw, 76px); }
+.c-herovis .glow { position: absolute; left: 50%; top: -8%; transform: translateX(-50%); width: 72%; height: 80%; background: radial-gradient(circle, var(--accent-glow), transparent 62%); filter: blur(44px); z-index: 0; pointer-events: none; }
+.c-herovis .pf-browser, .c-herovis .o-img { position: relative; z-index: 1; max-width: 980px; margin-inline: auto; }
+
+/* checklist (insights) */
+.c-checks { display: grid; gap: 16px; margin: 26px 0; }
+.c-check { display: flex; gap: 13px; align-items: flex-start; }
+.c-check .tick { width: 28px; height: 28px; border-radius: 50%; background: var(--accent-soft); color: var(--accent-ink); display: grid; place-items: center; flex: none; margin-top: 1px; }
+.c-check .tick svg { width: 16px; height: 16px; }
+.c-check b { font-weight: 600; display: block; }
+.c-check p { color: var(--ink-2); font-size: .9rem; margin-top: 2px; }
+
+/* testimonial carousel (two rows) */
+.c-tmarq { overflow: hidden; -webkit-mask-image: linear-gradient(90deg, transparent, #000 7%, #000 93%, transparent); mask-image: linear-gradient(90deg, transparent, #000 7%, #000 93%, transparent); }
+.c-tmarq + .c-tmarq { margin-top: 18px; }
+.c-tmarq-track { display: flex; gap: 18px; width: max-content; animation: scrollx 52s linear infinite; }
+.c-tmarq.rev .c-tmarq-track { animation-direction: reverse; }
+.c-tmarq:hover .c-tmarq-track { animation-play-state: paused; }
+.c-tcard { width: min(384px, 86vw); flex: none; background: var(--surface); border: 1px solid var(--line); border-radius: var(--r-lg); padding: 26px; box-shadow: var(--sh-1); }
+.c-tcard .stars { color: var(--accent); letter-spacing: 2px; font-size: .9rem; margin-bottom: 12px; }
+.c-tcard p { color: var(--ink); font-size: .94rem; line-height: 1.55; }
+.c-tcard .who { display: flex; align-items: center; gap: 11px; margin-top: 18px; padding-top: 16px; border-top: 1px solid var(--line); }
+.c-tcard .who .av { width: 42px; height: 42px; border-radius: 50%; background: var(--accent-soft); color: var(--accent-ink); display: grid; place-items: center; font-family: var(--font-display); font-weight: 600; flex: none; }
+.c-tcard .who .nm b { display: block; font-weight: 600; font-size: .9rem; }
+.c-tcard .who .nm span { color: var(--ink-2); font-size: .8rem; }
+@media (prefers-reduced-motion: reduce) { .c-tmarq-track { animation: none; flex-wrap: wrap; justify-content: center; } }
+
+/* alternating feature/security row */
+.c-row { display: grid; grid-template-columns: 1fr 1fr; gap: clamp(28px, 5vw, 64px); align-items: center; }
+.c-row + .c-row { margin-top: clamp(36px, 5vw, 64px); }
+@media (max-width: 860px) { .c-row { grid-template-columns: 1fr; } .c-row .c-row-media { order: -1; } }
+.c-row .o-img { aspect-ratio: 5 / 4; }
+.c-bullets { display: grid; gap: 12px; margin-top: 18px; }
+.c-bullets li { display: flex; gap: 11px; align-items: flex-start; color: var(--ink-2); font-size: .94rem; }
+.c-bullets svg { width: 19px; height: 19px; color: var(--accent); flex: none; margin-top: 2px; }
+
 /* ---------- Scroll reveal ---------- */
 [data-reveal] { opacity: 0; transform: translateY(22px); transition: opacity .7s var(--ease-out), transform .7s var(--ease-out); will-change: opacity, transform; }
 [data-reveal].in { opacity: 1; transform: none; }
