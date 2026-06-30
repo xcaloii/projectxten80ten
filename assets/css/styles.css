@@ -340,6 +340,7 @@ h3 { font-size: clamp(1.25rem, 2.2vw, 1.6rem); letter-spacing: -.015em; line-hei
 .quote .by .who span { color: var(--ink-2); font-size: .9rem; }
 
 /* ---------- CTA band ---------- */
+.cta-logo { display: inline-block; height: clamp(58px, 7vw, 74px); width: auto; margin-bottom: 20px; filter: drop-shadow(0 8px 24px rgba(0,0,0,.35)); }
 .cta-band { position: relative; background: var(--ink); color: #fff; border-radius: var(--r-xl); padding: clamp(40px,6vw,80px); overflow: hidden; text-align: center; }
 .cta-band h2 { color: #fff; }
 .cta-band .lead { color: rgba(255,255,255,.72); margin-inline: auto; margin-top: 18px; }
