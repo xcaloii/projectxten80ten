@@ -148,6 +148,35 @@
     });
   });
 
+  /* ---- Testimonial tabs ---- */
+  document.querySelectorAll("[data-testi-group]").forEach(function (group) {
+    var quoteEl = group.querySelector(".o-quote blockquote");
+    var avEl = group.querySelector(".o-quote .who .av");
+    var nameEl = group.querySelector(".o-quote .who .nm b");
+    var roleEl = group.querySelector(".o-quote .who .nm span");
+    var tabs = group.querySelectorAll(".o-tabs button");
+    tabs.forEach(function (btn) {
+      btn.addEventListener("click", function () {
+        tabs.forEach(function (b) { b.classList.remove("on"); });
+        btn.classList.add("on");
+        if (quoteEl) quoteEl.textContent = btn.dataset.quote || quoteEl.textContent;
+        if (nameEl) nameEl.textContent = btn.dataset.name || "";
+        if (roleEl) roleEl.textContent = btn.dataset.role || "";
+        if (avEl) avEl.textContent = btn.dataset.initials || "";
+      });
+    });
+  });
+
+  /* ---- Newsletter (dispatch) ---- */
+  document.querySelectorAll("form[data-newsletter]").forEach(function (form) {
+    form.addEventListener("submit", function (e) {
+      e.preventDefault();
+      var input = form.querySelector("input");
+      if (input && !input.checkValidity()) { input.focus(); return; }
+      form.innerHTML = '<p style="color:var(--accent-ink);font-weight:600;margin:0">Thanks — you’re on the list. Watch your inbox.</p>';
+    });
+  });
+
   /* ---- Footer year ---- */
   var yr = document.querySelector("[data-year]");
   if (yr) yr.textContent = new Date().getFullYear();
