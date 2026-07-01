@@ -1,0 +1,12 @@
+<svg viewBox="0 0 40 44" fill="none" xmlns="http://www.w3.org/2000/svg" role="img" aria-label="Ten80Ten">
+  <defs>
+    <linearGradient id="t8t-grad" x1="20" y1="3" x2="20" y2="41" gradientUnits="userSpaceOnUse">
+      <stop stop-color="#EA5518"/>
+      <stop offset="0.45" stop-color="#F0762A"/>
+      <stop offset="1" stop-color="#E2C06A"/>
+    </linearGradient>
+  </defs>
+  <path d="M5 4 H35 L20 21 Z" fill="url(#t8t-grad)"/>
+  <path d="M20 23 L35 40 H5 Z" fill="url(#t8t-grad)"/>
+  <path d="M20 30 L25.5 39.5 H14.5 Z" fill="#FBFBF9"/>
+</svg>
