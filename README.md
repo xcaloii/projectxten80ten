@@ -1,9 +1,10 @@
 # Ten80Ten — Marketing Website
 
 A fast, fully responsive, animated multi-page marketing site for **Ten80Ten** (*Systems + Specialists*).
-Static HTML/CSS/JS — **no build step, no framework, no dependencies** — hosts anywhere.
+Every page is a **single self-contained `.html` file** — all CSS, JS, and the logo mark are inlined.
+**No build step, no framework, no dependencies.** Drop a file on any host, or open it by double-click.
 
-> Visual direction: calm warm-white "AI/automation agency" aesthetic with elevated, lightweight motion and an orange accent. Inspired by the Automora template, sourced from the Ten80Ten marketing bible.
+> Visual direction: calm warm-white "AI/automation agency" aesthetic with elevated, lightweight motion and a deep-orange accent. Inspired by the Automora template, sourced from the Ten80Ten marketing bible.
 
 ## Pages
 | File | Purpose |
@@ -16,24 +17,19 @@ Static HTML/CSS/JS — **no build step, no framework, no dependencies** — host
 
 ```
 ten80ten/
-├── index.html  services.html  pricing.html  about.html  contact.html
+├── index.html  services.html  pricing.html  about.html  contact.html   ← self-contained
 ├── assets/
-│   ├── styles.css          # design system: tokens, components, motion
-│   ├── app.js              # nav, reveals, counters, FAQ, magnetic btns, parallax, form
-│   └── img/
-│       └── ten80ten-mark.svg   # crisp SVG hourglass mark (orange→gold)
+│   └── img/                    # brand logos + og-image.png (social share card)
 └── README.md
 ```
 
-> **Note on the previous build:** the earlier "editorial" design is preserved in git history. Its old files
-> (`assets/css/styles.css`, `assets/js/main.js`, and `platform.html`) remain in the folder but are **not used**
-> by the five pages above. Delete them once you're happy with the redesign, or `git checkout` to compare.
+Each HTML file inlines its own `<style>`, `<script>`, and the SVG hourglass mark, so it renders standalone.
+The only external requests are Google Fonts (needs internet) and the `og:image` (used by social crawlers).
 
-## Preview locally
-Any static server works:
-```bash
-npx serve .          # then open the printed URL (this repo ships a launch config on :4321)
-```
+> **Editing tip:** because each page is self-contained, the design system CSS lives inside a `<style>` block
+> near the top of every page. To restyle globally, edit the `:root` tokens in each file — or keep the
+> maintainable **shared-assets** version from git history (`git checkout redesign/automora-style~1 -- assets`)
+> if you'd prefer to edit one `styles.css`/`app.js` and re-inline.
 
 ## Wire up before going live (2 things)
 
@@ -44,23 +40,23 @@ drop your Calendly/Cal.com embed into the `.booking-embed` container (replace th
 **2. Contact form** — fully validated client-side; the submit is a demo (no backend).
 To make it send, point it at a form service like [Formspree](https://formspree.io):
 - In `contact.html`, set `<form ... action="https://formspree.io/f/XXXX" method="POST">`
-- In `assets/app.js`, inside the `contactForm()` submit handler, replace the `setTimeout(...)` demo
-  block with `fetch(form.action, { method:'POST', body:new FormData(form), headers:{Accept:'application/json'} })`
+- In the inlined `<script>` (the `contactForm()` function), replace the `setTimeout(...)` demo block with
+  `fetch(form.action, { method:'POST', body:new FormData(form), headers:{Accept:'application/json'} })`
   and show `.form-success` on a successful response.
 
 Also update the email (`hello@ten80ten.com`) and social links (`#`) in each page footer.
 
-## Design system (customize in `assets/styles.css`)
-All theming is via CSS custom properties at the top (`:root`):
-- **Color** — `--accent` (`#FF5A1F` orange), `--bg` (`#FAFAF7` calm warm white), `--ink` (text). Change `--accent` to re-skin the site.
+## Design system
+All theming is via CSS custom properties in each page's `:root` block:
+- **Color** — `--accent` (`#EA5518` deep orange), `--bg` (`#FAFAF7` calm warm white), `--ink` (text). Change `--accent` to re-skin.
 - **Type** — Plus Jakarta Sans (display) · Inter (body) · JetBrains Mono (labels/numbers), via Google Fonts with `font-display:swap`.
 - **Radius / shadow / spacing / motion** tokens are all defined there too.
-- **Brand mark** — `assets/img/ten80ten-mark.svg` is a clean vector rebuild of the hourglass logo; swap the gradient stops to retune.
+- **Brand mark** — a clean vector rebuild of the hourglass logo (inlined + `assets/img/ten80ten-mark.svg`); swap the gradient stops to retune.
 
 ## Built-in quality
 - **Responsive** mobile-first; verified at 375px and 1280px+, no horizontal scroll.
 - **Accessible** — semantic landmarks, labelled icon buttons, visible focus rings, ≥4.5:1 text contrast, keyboard-operable nav/FAQ/form, `aria-live` on form success.
-- **Performant** — zero JS dependencies; animations use only `transform`/`opacity`; reveals via `IntersectionObserver`; images/space reserved (no layout shift).
+- **Performant** — zero JS dependencies; animations use only `transform`/`opacity`; reveals via `IntersectionObserver`; space reserved (no layout shift).
 - **`prefers-reduced-motion`** fully respected — reveals, counters, marquee, parallax and float all disable gracefully.
 
 ## Deploy
